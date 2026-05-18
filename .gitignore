@@ -1,0 +1,10 @@
+# Compiled files
+*.class
+
+# Runtime data
+*.csv
+*.log
+
+# IDE files
+.vscode/
+.idea/
