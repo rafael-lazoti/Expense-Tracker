@@ -8,11 +8,11 @@ public class Expense {
     private double amount;
     private LocalDate date;
 
-    public Expense(double amount, String description, int id, LocalDate date) {
+    public Expense(double amount, String description, int id) {
         this.id = id;
         this.description = description;
         this.amount = amount;
-        this.date = date;
+        // this.date = date;
     }
 
     public int getId() {
@@ -29,6 +29,13 @@ public class Expense {
 
     public LocalDate getDate() {
         return date;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Amount:" + amount + ", " + "Description:" + description + ", " + "Id:" +
+                id + ", " + "Date:" + date;
 
     }
 }

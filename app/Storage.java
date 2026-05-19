@@ -18,9 +18,7 @@ public class Storage {
 
     public void displayExpenses() {
         for (Expense expense : expenses) {
-            System.out.println(
-                    "Amount:" + expense.getAmount() + ", " + "Description:" + expense.getDescription() + ", " + "Id:" +
-                            expense.getId() + ", " + "Date:" + expense.getDate());
+            expense.toString();
         }
     }
 }

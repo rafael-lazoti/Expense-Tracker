@@ -9,9 +9,17 @@ public class Main {
 
     Storage storage = new Storage();
 
-    Expense expense = new Expense(40.0, "Haircut", 001, LocalDate.now());
+    ExpenseFile file = new ExpenseFile();
+
+    UserInput input = new UserInput();
+
+    // Expense expense = new Expense(40.0, "Haircut", 001, LocalDate.now());
+
+    Expense expense = input.getInput();
 
     storage.addExpense(expense);
+
+    file.writeToFile(expense);
 
     storage.displayExpenses();
   }
