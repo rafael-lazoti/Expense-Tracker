@@ -1,6 +1,6 @@
 package app;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 // Starts the program
 
@@ -13,14 +13,16 @@ public class Main {
 
     UserInput input = new UserInput();
 
-    // Expense expense = new Expense(40.0, "Haircut", 001, LocalDate.now());
-
     Expense expense = input.getInput();
+
+    // input.getInput();
+    // Expense expense = new Expense(40.0, "Haircut", 001, LocalDate.now());
 
     storage.addExpense(expense);
 
     file.writeToFile(expense);
 
     storage.displayExpenses();
+
   }
 }

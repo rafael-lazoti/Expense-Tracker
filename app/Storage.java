@@ -18,7 +18,7 @@ public class Storage {
 
     public void displayExpenses() {
         for (Expense expense : expenses) {
-            expense.toString();
+            System.out.println(expense.toString());
         }
     }
 }
