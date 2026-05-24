@@ -15,14 +15,13 @@ public class Main {
 
     Expense expense = input.getInput();
 
-    // input.getInput();
-    // Expense expense = new Expense(40.0, "Haircut", 001, LocalDate.now());
-
     storage.addExpense(expense);
 
     file.writeToFile(expense);
 
-    storage.displayExpenses();
+    file.readFile(expense);
+
+    // storage.displayExpenses();
 
   }
 }

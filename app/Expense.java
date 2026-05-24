@@ -1,26 +1,31 @@
 package app;
 
+import java.math.BigDecimal;
+
 //import java.time.LocalDate;
 
 public class Expense {
     private int id;
+    private static int nextId = 1;
     private String description;
-    private double amount;
+    private BigDecimal amount; // Big Decimal instead of double because for banking numbers have to be very
+                               // precise
     // private LocalDate date;
 
-    public Expense(double amount, String description, int id) {
+    public Expense(BigDecimal amount, String description) {
         this.amount = amount;
         this.description = description;
-        this.id = id;
+        this.id = nextId;
+        nextId++;
         // this.date = date;
+    }
+
+    public static void setNextId(int newValue) {
+        nextId = newValue;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int newId) {
-        this.id = newId;
     }
 
     public String getDescription() {
@@ -31,11 +36,11 @@ public class Expense {
         this.description = newDescription;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(double newAmount) {
+    public void setAmount(BigDecimal newAmount) {
         this.amount = newAmount;
     }
 
@@ -44,8 +49,8 @@ public class Expense {
 
     @Override
     public String toString() {
-        return "Amount:" + amount + ", " + "Description:" + description + ", " + "Id:" +
-                id;
+        return amount + "," + description + "," + id;
 
     }
+
 }

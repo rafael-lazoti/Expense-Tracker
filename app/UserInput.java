@@ -1,5 +1,6 @@
 package app;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class UserInput {
@@ -8,14 +9,12 @@ public class UserInput {
 
     public Expense getInput() {
         System.out.println("Cost:");
-        double amount = scanner.nextDouble();
+        BigDecimal amount = scanner.nextBigDecimal();
         scanner.nextLine();
         System.out.println("Description:");
         String description = scanner.nextLine();
-        System.out.println("Id:");
-        int id = scanner.nextInt();
-        scanner.close();
-        return new Expense(amount, description, id);
+
+        return new Expense(amount, description);
 
     }
 
