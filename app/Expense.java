@@ -16,7 +16,7 @@ public class Expense {
         this.amount = amount;
         this.description = description;
         this.id = nextId;
-        nextId++;
+        nextId++; // makes sure id always increases so there are no dupicate ids
         // this.date = date;
     }
 

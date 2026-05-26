@@ -17,9 +17,9 @@ public class Main {
 
     storage.addExpense(expense);
 
-    file.writeToFile(expense);
-
     file.readFile(expense);
+
+    file.writeToFile(expense);
 
     // storage.displayExpenses();
 

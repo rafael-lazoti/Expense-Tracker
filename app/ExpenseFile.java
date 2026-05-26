@@ -11,8 +11,8 @@ public class ExpenseFile {
     public void writeToFile(Expense expense) {
         try {
             FileWriter writer = new FileWriter("expenses.csv", true);
-            writer.write(System.lineSeparator());
             writer.write(expense.toString());
+            writer.write(System.lineSeparator());
             System.out.println("Wrote to File!");
             writer.close();
         } catch (IOException e) {
@@ -34,8 +34,8 @@ public class ExpenseFile {
                 String[] parts = line.trim().split(",");
                 lastId = Integer.parseInt(parts[2]);
             }
+            Expense.setNextId(lastId + 1); // Gets the last id number and adds 1
             System.out.println(lastId);
-            Expense.setNextId(lastId + 1);
             reader.close();
 
         } catch (IOException e) {
